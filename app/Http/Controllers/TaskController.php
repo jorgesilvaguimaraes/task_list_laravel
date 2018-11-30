@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\TasksRepository;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    protected $task_repository;
+
+    public function __construct(TasksRepository $tasksRepository)
+    {
+        $this->task_repository = $tasksRepository;
+    }
+
 
     public function allTasks()
     {
-        return 'allTasks';
+        return $this->task_repository->all();
     }
 
     public function getTask($id)
