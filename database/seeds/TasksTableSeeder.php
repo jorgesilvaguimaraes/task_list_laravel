@@ -21,7 +21,7 @@ class TasksTableSeeder extends Seeder
           ],
         ];
 
-        $tasks = new \App\Tasks();
+        $tasks = new \App\Entities\Tasks();
         foreach ($dados as $dado)
         {
             $tasks->fill($dado)->save();
