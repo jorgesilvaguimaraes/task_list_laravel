@@ -17,7 +17,6 @@ class TasksTableSeeder extends Seeder
               "descricao" => "As 7:45 AM levar o filho a escola todas as manhã",
               "status" => "1",
               "data" =>"2018/01/01",
-              "conclusao" =>false
           ],
         ];
 
