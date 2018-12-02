@@ -7,11 +7,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Tasks.
+ * Class Status.
  *
  * @package namespace App\Entities;
  */
-class Tasks extends Model implements Transformable
+class Status extends Model implements Transformable
 {
     use TransformableTrait;
 
@@ -20,16 +20,16 @@ class Tasks extends Model implements Transformable
      *
      * @var array
      */
-    protected $table = 'tasks';
+    protected $table = 'status';
     protected $primaryKey = 'id';
     public    $timestamps = true;
     public    $incrementing = true;
 
-    protected $fillable = ['id', 'titulo', 'descricao', 'status_id', 'data', 'conclusao'];
+    protected $fillable = ['id','status'];
 
-    public function status()
+    public function tasks()
     {
-        return $this->belongsTo(Status::class, 'status_id');
+        return $this->hasMany(Tasks::class, 'id');
     }
 
 }

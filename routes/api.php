@@ -13,10 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
+/**
+ *  Routas da API que seria usado para o sistema desaclopado
+ */
 
 Route::group(['prefix'=>'task'], function(){
 
